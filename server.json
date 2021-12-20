@@ -1,0 +1,85 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "username": "test",
+      "password": "test1"
+    },
+    {
+      "id": 2,
+      "username": "shaivi",
+      "password": "shaivi"
+    }
+  ],
+  "Address": [
+    {
+      "id": 1,
+      "First_Name": "John",
+      "Last_Name": "Smith",
+      "Birthday": "2002-10-01",
+      "Description": "She is my best friend's wife",
+      "Emails": [
+        "mary_smith@gmail.com",
+        "msmith@hotmail.com"
+      ],
+      "Phones": [
+        {
+          "Type": "Mobile",
+          "Phone_Number": "123-123-1235"
+        },
+        {
+          "Type": "Home",
+          "Phone_Number": "123-123-1235"
+        }
+      ],
+      "OwnerId": 2,
+      "CreatedDate": "2021-10-13T18:25:43.511Z",
+      "UpdatedDate": "2021-12-18T15:52:07.000Z"
+    },
+    {
+      "id": 2,
+      "First_Name": "Mary",
+      "Last_Name": "Smith",
+      "Birthday": "2002-10-01",
+      "Description": "She is my best friend's wife",
+      "Emails": [
+        "mary_smith@gmail.com",
+        "msmith@hotmail.com"
+      ],
+      "Phones": [
+        {
+          "Type": "Mobile",
+          "Phone_Number": "321-3454-1234"
+        },
+        {
+          "Type": "Home",
+          "Phone_Number": "123-123-1235"
+        }
+      ],
+      "OwnerId": 2,
+      "CreatedDate": "2021-10-13T18:25:43.511Z",
+      "UpdatedDate": "2021-10-18T18:25:43.511Z"
+    },
+    {
+      "id": 3,
+      "First_Name": "Shaivi",
+      "Last_Name": "Jain",
+      "Birthday": "10-08-1995",
+      "Description": "Demo",
+      "Emails": "shaivijainprivate@gmail.com",
+      "Phones": [
+        {
+          "Type": "Mobile",
+          "Phone_Number": "9999999"
+        },
+        {
+          "Type": "Home",
+          "Phone_Number": "99999999"
+        }
+      ],
+      "OwnerId": 2,
+      "CreatedDate": "2021-12-18T16:08:26.000Z",
+      "UpdatedDate": "2021-12-18T16:12:42.000Z"
+    }
+  ]
+}

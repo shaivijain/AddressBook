@@ -1,0 +1,32 @@
+.LoginContainer{
+    background-image: url("../Images/bg-img.jpg");
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.LoginHeader{
+    text-align: center;
+}
+.headerText{
+    margin-bottom: 50px;
+    color: rgb(76 127 193);
+}
+.login{
+    margin: 0 auto;
+    background-color: #fff;
+    width: 40%;
+    padding: 4em;  
+}
+.SubmitWrapper{
+    text-align: center;
+}
+.login-form-button{
+    width: 100px;
+    background-color: rgb(76 127 193);
+    border-color: rgb(76 127 193);
+    margin-top: 20px;
+}
