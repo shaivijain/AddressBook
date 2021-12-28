@@ -20,7 +20,7 @@ class ContactContainer extends Component{
         this.setState({addContactModal:value,edit:false,initialValues:{}})
     }
     fetchAddress=()=>{
-        makeRequest.get("Address") .then((response) => {
+        makeRequest.get("Address").then((response) => {
             if(response){
                 this.setState({addessData:response})
             }
@@ -36,7 +36,7 @@ class ContactContainer extends Component{
         })
     }
     deleteRow=(data)=>{
-        makeRequest.delete(`Address/${data?.id}/`) .then((response) => {
+        makeRequest.delete(`Address/${data?.id}/`).then((response) => {
             this.fetchAddress()
          })
     }
@@ -77,7 +77,7 @@ class ContactContainer extends Component{
           this.setState({addContactModal:false})   
     }
     onEnter=(e)=>{
-        if(e.key=="Enter"){
+        if(e.key === "Enter"){
             makeRequest.get(`Address?q=${e.target.value}`).then((response) => {
                 if(response){
                     this.setState({addessData:response})

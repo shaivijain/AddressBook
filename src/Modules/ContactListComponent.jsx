@@ -31,8 +31,8 @@ const ContactListComponent =(props)=>{
                     key="action"
                     render={(text, record) => (
                         <Space size="middle">
-                        <a onClick={()=>{props.getEditData(record)}}><EditOutlined /></a>
-                        <a onClick={()=>{confirm(props,record)}}><DeleteOutlined /></a>
+                        <a href='blank' onClick={()=>{props.getEditData(record)}}><EditOutlined /></a>
+                        <a href='blank' onClick={()=>{confirm(props,record)}}><DeleteOutlined /></a>
                         </Space>
                     )}
                     />

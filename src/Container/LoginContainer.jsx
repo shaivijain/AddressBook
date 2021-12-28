@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 class LoginContainer extends Component {
   loginEvent = (values) => {
-    makeRequest.getUsers("Users",values) .then((event) => {
+    makeRequest.getUsers("Users",values).then((event) => {
        if(Object.values(event).length){
          this.props.setAccessToken(event)
         this.props.history.push({ pathname: "/contacts"})

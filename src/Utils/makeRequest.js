@@ -8,9 +8,10 @@ const makeRequest = {
         Axios.get(`${REACT_APP_API_URL}${url}`)
         .then(resp => {
             resp.data.map(item=>{
-              if(item.username==data.username && item.password == data.password){
+              if(item.username === data.username && item.password === data.password){
                 userData = {...item}
               }
+              return '';
             })
             resolve(userData);
         })
