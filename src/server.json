@@ -32,6 +32,7 @@
           "Phone_Number": "123-123-1235"
         }
       ],
+      "fav":true,
       "OwnerId": 2,
       "CreatedDate": "2021-10-13T18:25:43.511Z",
       "UpdatedDate": "2021-12-18T15:52:07.000Z"

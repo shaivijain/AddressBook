@@ -40,6 +40,33 @@ class ContactContainer extends Component{
             this.fetchAddress()
          })
     }
+    setFav=(record,value)=>{
+        let data = {
+            "id":record.id,
+            "First_Name":record.First_Name,
+            "Last_Name": record.Last_Name,
+            "Birthday": record.Birthday,
+            "Description": record.Description,
+            "Emails":record.Emails,
+            "fav":value,
+            "Phones": [{
+              "Type": "Mobile",
+              "Phone_Number":record.Mobile
+              }, {
+              "Type": "Home",
+              "Phone_Number": record.Home
+              }
+            ],
+            "OwnerId": this.props.userData.id,
+            "CreatedDate": record.CreatedDate,
+            "UpdatedDate":  record.UpdatedDate
+          }
+        makeRequest.put(`Address/${record?.id}/`,data).then((response) => {
+          if(response && Object.values(response).length){
+              this.fetchAddress()
+          }
+       })  
+      }
     SaveFormData=(values,rowData)=>{
         var utcMoment = moment.utc();
         let data = {
@@ -49,6 +76,7 @@ class ContactContainer extends Component{
             "Birthday": values.Birthday?values.Birthday:"",
             "Description": values.Description?values.Description:"",
             "Emails": values.Emails?values.Emails:"",
+            "fav":values.fav?values.fav:false,
             "Phones": [{
               "Type": "Mobile",
               "Phone_Number":values.Mobile
@@ -93,7 +121,7 @@ class ContactContainer extends Component{
                     <Col span={20}><Input placeholder="Type text and enter to Search" onKeyDown={(e)=>{this.onEnter(e)}} className="search" /></Col>
                     <Col span={4}><Button className="AddButton" onClick={()=>this.openContactModal(true)} >Add Contact</Button></Col></Col>
             </Col>
-            <Col span={24}><ContactListComponent addessData={this.state.addessData} getEditData={this.getEditData} deleteRow={this.deleteRow} /></Col>
+            <Col span={24}><ContactListComponent addessData={this.state.addessData} getEditData={this.getEditData} deleteRow={this.deleteRow} setFav={this.setFav} /></Col>
             {this.state.addContactModal?<Modal title={!this.state.edit?"Create A New Contact":"Update Contact"} footer={null} visible={true} onCancel={()=>this.openContactModal(false)} ><AddContactForm RowData={this.state.rowData} edit={this.state.edit} initialValues={this.state.initialValues} SaveFormData={this.SaveFormData} /></Modal>:null}
         </Row>
     }

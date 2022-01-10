@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Space,Modal } from 'antd';
-import {EditOutlined,DeleteOutlined,ExclamationCircleOutlined} from '@ant-design/icons';
+import {EditOutlined,DeleteOutlined,ExclamationCircleOutlined,StarOutlined} from '@ant-design/icons';
 
 const { Column, ColumnGroup } = Table;
 const confirm=(props,record)=>{
@@ -13,7 +13,6 @@ const confirm=(props,record)=>{
     onOk:()=>{props.deleteRow(record)}
   });
 }
-
 const ContactListComponent =(props)=>{
         return <Table dataSource={props.addessData} bordered >
                     <ColumnGroup title="Name">
@@ -31,8 +30,9 @@ const ContactListComponent =(props)=>{
                     key="action"
                     render={(text, record) => (
                         <Space size="middle">
-                        <a href='blank' onClick={()=>{props.getEditData(record)}}><EditOutlined /></a>
-                        <a href='blank' onClick={()=>{confirm(props,record)}}><DeleteOutlined /></a>
+                        <a onClick={()=>{props.getEditData(record)}}><EditOutlined /></a>
+                        <a onClick={()=>{confirm(props,record)}}><DeleteOutlined /></a>
+                        {record.fav === true?<a><StarOutlined onClick={()=>{props.setFav(record,false)}} className="yellowBackground" /></a>:<a><StarOutlined onClick={()=>{props.setFav(record,true)}} className="transparentBackground" /></a>}
                         </Space>
                     )}
                     />
